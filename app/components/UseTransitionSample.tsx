@@ -7,7 +7,6 @@ export default function UseTransitionSample({}) {
   const [isPending, startTransition] = useTransition();
 
   const handleSubmit = async () => {
-    // ↓ここで非同期処理（Action)が渡せるようになりました
     startTransition(async () => {
       const error = await updateName(name);
       if (error) {
