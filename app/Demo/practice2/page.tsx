@@ -1,4 +1,4 @@
-import UseActionStateSample from "../components/UseActionStateSample";
+import UseActionStateSample from "../../components/UseActionStateSample";
 
 export default function page() {
   return (
