@@ -1,12 +1,11 @@
-import Register from "@/app/components/Register";
+import { Register } from "@/app/components/Register";
 
 export default function page() {
   const formAction = async (formData: FormData) => {
     "use server";
     await new Promise((resolve) => {
-      setTimeout(resolve, 1000);
-    }); //intentionally delay time
-    console.log(formData.get("firstName"));
+      setTimeout(resolve, 500);
+    });
   };
 
   return (
