@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { prettyJSON } from "hono/pretty-json";
+import { cors } from "hono/cors";
 
 let blogPosts = [
   {
@@ -20,10 +21,13 @@ let blogPosts = [
 ];
 
 const app = new Hono();
+app.use("*", cors());
 app.use("*", prettyJSON());
 
 app.get("/", (c) => {
-  return c.text("Hello Hono!");
+  return c.json({
+    message: "success!",
+  });
 });
 
 app.get("/entry/:id", (c) => {
