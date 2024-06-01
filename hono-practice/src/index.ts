@@ -25,9 +25,7 @@ app.use("*", cors());
 app.use("*", prettyJSON());
 
 app.get("/", (c) => {
-  return c.json({
-    message: "success!",
-  });
+  return c.json(blogPosts);
 });
 
 app.get("/entry/:id", (c) => {
