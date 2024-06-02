@@ -28,11 +28,10 @@ app.get("/", (c) => {
   return c.json(blogPosts);
 });
 
-app.get("/entry/:id", (c) => {
-  const id = c.req.param("id");
-  return c.json({
-    "you id is": id,
-  });
+app.get("/blogs/:id", (c) => {
+  const id = Number(c.req.param("id"));
+  console.log(id);
+  return c.json(blogPosts[id]);
 });
 
 app.post("/post", async (c) => {
