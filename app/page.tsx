@@ -1,9 +1,13 @@
-import GetHonoRequestButton from "./components/GetHonoRequestButton";
+import FetchBlogs from "./components/FetchBlogs";
+import FetchBlog from "./components/FetchBlog";
+import PostArticle from "./components/PostArticle";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <GetHonoRequestButton />
+      {/* <FetchBlogs />
+      <FetchBlog blogId={"1"} /> */}
+      <PostArticle />
     </main>
   );
 }
