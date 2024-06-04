@@ -1,14 +1,29 @@
-import { useActionState, useState } from "react";
-import { addToCart } from "../lib/action.js";
+import { useActionState } from "react";
 
-export default function UseActionStateSample({ itemID, itemTitle }) {
-  const [message, formAction] = useActionState(addToCart, null);
+const Counter: React.FC = () => {
+  const [count, increment, isPending] = useActionState(async (currentCount) => {
+    await fetch('https://api.example.com/increment', {
+      method: 'POST',
+    });
+    return currentCount + 1;
+  }, 0);
+
+  const handleClick = () => {
+    increment();
+  };
+
   return (
-    <form action={formAction}>
-      <h2>{itemTitle}</h2>
-      <input type="hidden" name="itemID" value={itemID} />
-      <button type="submit">Add to Cart</button>
-      {message}
-    </form>
+    <div>
+      <p>{count}</p>
+      <button
+        type="button"
+        onClick={handleClick}
+        disabled={isPending}
+      >
+        Increment
+      </button>
+    </div>
   );
 }
+
+export default Counter;
