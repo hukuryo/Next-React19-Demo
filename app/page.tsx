@@ -2,6 +2,7 @@ import FetchBlogs from "./components/FetchBlogs";
 import FetchBlog from "./components/FetchBlog";
 import PostArticle from "./components/PostArticle";
 import Counter from "./components/Counter";
+import RefCleanup from "./components/RefCleanup";
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
       {/* <FetchBlogs />
       <FetchBlog blogId={"1"} /> */}
       {/* <PostArticle /> */}
-      <Counter />
+      {/* <Counter /> */}
+      <RefCleanup />
     </main>
   );
 }
